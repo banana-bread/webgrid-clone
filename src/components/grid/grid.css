@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  width: 496px;
+  height: 496px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.grid-square {
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.grid-square.active {
+  background-color: #0a84ff;
+}
+
+.grid-square.error {
+  background-color: red;
+}
+
+.grid-square:not(.active):not(.error):hover {
+  background-color: #bfbfbf;
+}
+
+.grid-square.active:hover {
+  background-color: #0764bf;
+}
