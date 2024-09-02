@@ -5,16 +5,17 @@ const useGridState = (gridSize: number) => {
   const [activeSquareIndex, setActiveSquareIndex] = useState(0);
 
   const selectRandomTarget = () => {
-    const randomIndex = Math.floor(Math.random() * gridSize);
+    let randomIndex = Math.floor(Math.random() * gridSize);
+
+    if (randomIndex === activeSquareIndex) {
+      return selectRandomTarget();
+    }
+
     const squaresArrayCopy = [...squaresArray];
 
-    // activate new target
     squaresArrayCopy[randomIndex] = true;
-
-    // deactivate old target
     squaresArrayCopy[activeSquareIndex] = false;
 
-    // state updates
     setActiveSquareIndex(randomIndex);
     setSquaresArray(squaresArrayCopy);
   };

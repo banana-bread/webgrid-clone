@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 interface CountdownTimerProps {
   format: string;
   timeInSeconds: number;
-  onTimerFinish: () => void;
-  style: object;
+  onCountdownFinish: () => void;
+  className: string;
 }
 
 function CountdownTimer({
   format,
   timeInSeconds,
-  onTimerFinish,
-  style,
+  onCountdownFinish,
+  className,
 }: CountdownTimerProps) {
   const [time, setTime] = useState(timeInSeconds);
 
@@ -20,7 +20,7 @@ function CountdownTimer({
       setTime((prevTime) => {
         if (prevTime <= 1) {
           clearInterval(timerId);
-          onTimerFinish();
+          onCountdownFinish();
           return 0;
         }
         return prevTime - 1;
@@ -44,7 +44,14 @@ function CountdownTimer({
     }
   };
 
-  return <div style={style}>{formatTime()}</div>;
+  return (
+    <div
+      style={{ fontFamily: "'Courier New', Courier, monospace" }}
+      className={className}
+    >
+      {formatTime()}
+    </div>
+  );
 }
 
 export default CountdownTimer;

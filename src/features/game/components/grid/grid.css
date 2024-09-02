@@ -1,14 +1,21 @@
 .grid-container {
   display: grid;
-  width: 496px;
-  height: 496px;
+  /* width: 608px;
+  height: 608px; */
+  width: 100%;
+  max-width: 608px;
+  max-height: 608px;
+  min-width: 408px;
+  min-height: 408px;
+  aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio */
+
   border: 2px solid black;
   box-sizing: border-box;
 }
 
 .grid-square {
   background-color: white;
-  border: 1px solid black;
+  border: 1.5px solid black;
   box-sizing: border-box;
 }
 
