@@ -2,6 +2,7 @@ import { useState } from "react";
 import Grid from "./components/grid/Grid";
 import Scoreboard from "./components/scoreboard/Scoreboard";
 import useBitsPerSecond from "./components/grid/hooks/useBitsPerSecond";
+import StartButton from "./components/start_button/StartButton";
 
 const GRID_SIZE = 900; // 30x30
 // const GRID_SIZE = 144; // 12x12
@@ -26,25 +27,21 @@ function Game() {
 
   return (
     <div className="w-full flex justify-center">
-      {!hasStarted && (
-        <button
-          onClick={onStart}
-          className="inline-flex h-12 items-center justify-center rounded-full py-2 px-6 font-medium text-white bg-[#0a84ff] shadow-lg shadow-neutral-400/20 transition active:scale-95"
-        >
-          Start
-        </button>
-      )}
+      {!hasStarted && <StartButton onClick={onStart}>Start Game</StartButton>}
       {hasStarted && (
         <div className="w-full flex gap-12 max-w-screen-xl justify-center">
           <div className="flex flex-col justify-center">
             {hasFinished && (
-              <div className="flex flex-col">
-                <h1 className="text-4xl mb-4">Your peak score:</h1>
+              <div className="flex flex-col gap-2">
+                <h1 className="text-4xl">Your peak score:</h1>
                 <div className="text-6xl">
                   <span>{calculateBitsPerSecond().toFixed(2)} BPS</span>&nbsp;
                   <span className="text-gray-400">
                     ({netCorrectTargetsClicked} NTPM)
                   </span>
+                </div>
+                <div className="self-end mt-6">
+                  <StartButton onClick={onStart}>Play Again</StartButton>
                 </div>
               </div>
             )}
