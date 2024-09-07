@@ -21,4 +21,5 @@ BPS = (Net Correct Targets / 60) × log2(Grid Size)
 
 In simple terms, it measures how quickly and accurately you select targets, factoring in how complex the grid is.
 
+You can play the clone [here](https://banana-bread.github.io/webgrid-clone/)
 You can play the original Webgrid game [here](https://neuralink.com/webgrid/)
