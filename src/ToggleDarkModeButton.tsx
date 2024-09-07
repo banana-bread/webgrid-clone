@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import SunSvg from "./assets/sun.svg";
-import MoonSvg from "./assets/moon.svg";
+// import SunSvg from "./assets/sun.svg";
+// import MoonSvg from "./assets/moon.svg";
 
 const ToggleDarkModeButton = () => {
   const [appearance, setAppearance] = useState("light");
@@ -31,8 +31,6 @@ const ToggleDarkModeButton = () => {
 
   return (
     <>
-      <SunSvg />
-      {/* <MoonSvg /> */}
       <button onClick={handleClick}>enable {getModeToggle()} mode</button>
     </>
   );
