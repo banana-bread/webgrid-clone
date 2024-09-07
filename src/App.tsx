@@ -1,5 +1,5 @@
 import Game from "./features/game/Game";
-import ToggleDarkModeButton from "./ToggleDarkModeButton";
+// import ToggleDarkModeButton from "./ToggleDarkModeButton";
 
 function App() {
   return (
