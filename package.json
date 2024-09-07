@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "main -d dist"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans": "^5.0.5",
